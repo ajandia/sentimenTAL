@@ -1,0 +1,4 @@
+fastapi==0.70.0
+Flask==2.0.2
+MarkupSafe==2.0.1
+uvicorn==0.15.0

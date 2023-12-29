@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>PROJET Loic</title>
+        <link rel="shortcut icon" href="#">
+        <link href="{{ url_for('static', path='/idee.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <hgroup><!-- titre + sous-titre -->
+            <h1>SentimenTAL</h1>
+			<h2>Quel livre allez-vous lire à votre enfant ce soir ? &#128218; &#128564;</h2>
+        </hgroup><!-- fin de la partie titre + sous-titre -->
+        <div id="nav"><!-- menu de nagivation -->
+            <nav class="navmenu">
+                <ul class = "nav">
+                    <li><a href="../" style="color:#FFFFFF"><span>Accueil</span></a></li>
+                    <li><a href="{{ url_for('static', path='/description_projet.html') }}" style="color:#FFFFFF"><span>Le projet</span></a></li>
+                    <li><a href="{{ url_for('static', path='/description_nous.html') }}" style="color:#FFFFFF"><span>L'équipe</span></a></li>
+                </ul>
+            </nav>
+        </div><!-- fin du menu de navigation -->
+        <div id="section"><!-- début du contenu principal de la page -->
+            <table border="0" style="max-width:1800px;width:100%; font-size: 16px">
+                <tr>
+                    <th><h3>Légende</h3></th>
+                    <th><h3>Les sentiments présents dans votre texte</h3></th>
+                    <th><h3>En résumé</h3></th>
+                </tr> 
+                    <td width="50%" align="center">
+                        <text><JOIE_label>JOIE</JOIE_label></text>
+                        <br/>
+                        <text><COL_label>COLERE</COL_label></text>
+                        <br/>
+                        <text><TRI_label>TRISTESSE</TRI_label></text>
+                        <br/>
+                        <text><PEUR_label>PEUR</PEUR_label></text>
+                        <br/>
+                        <text><DEG_label>DEGOUT</DEG_label></text>
+                        <br/>
+                        <text><MOQ_label>MOQUERIE</MOQ_label></text>
+                        <br/>
+                        <text><SUR_label>SURPRISE</SUR_label></text>
+                        <br/>
+                    </td>
+                    <td width="50%" align="center"/>
+                        <p>{{response}}</p>
+                        <br/>
+                    </td>
+                    <td width="50%" align="center"> 
+                        <li>
+                        {% for x in occurrence %}
+                            {{x}}<br/>
+                        {% endfor %}
+                        </li>
+                        <br/>
+                        <li>{{princ}}</li>
+                    </td>
+				</tr>
+			</table>
+        </div><!-- fin du contenu principal de la page -->
+        <div class="footer"><!-- début du bloc de pied de page-->
+            <p>Réalisé dans le cadre des cours Apprentissage artificiel et Interfaces Web du professeur Loïc Grobol - Alexandra, Aurélie & Caroline - promotion M2 TAL 2021-2022</p>
+        </div><!-- fin du bloc de pied de page-->
+    </body>
+</html>

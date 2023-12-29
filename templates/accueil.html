@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>PROJET Loic</title>
+		<link rel="shortcut icon" href="#">	
+		<link href="{{ url_for('static', path='/idee.css') }}" rel="stylesheet">
+	</head>
+	<body>
+		<hgroup><!-- titre + sous-titre -->
+			<h1>SentimenTAL</h1>
+			<h2>Quel livre allez-vous lire à votre enfant ce soir ?  &#128218; &#128564;</h2>
+		</hgroup><!-- fin de la partie titre + sous-titre -->
+		<div id="nav"><!-- menu de nagivation -->
+			<nav class="navmenu">
+				<ul class = "nav">
+					<li><a href="../" style="color:#FFFFFF"><span>Accueil</span></a></li>
+					<li><a href="{{ url_for('static', path='/description_projet.html') }}" style="color:#FFFFFF"><span>Le projet</span></a></li>
+					<li><a href="{{ url_for('static', path='/description_nous.html') }}" style="color:#FFFFFF"><span>L'équipe</span></a></li>
+				</ul>
+			</nav>
+		</div><!-- fin du menu de navigation -->
+		<div id="section"><!-- début du contenu principal de la page -->
+			<table border="0" style="max-width:1800px;width:100%; font-size: 16px">
+				<tr>
+					<td width=80%" align="center">
+						<form method="post" >
+							<h3>Veuillez saisir votre texte dans le cadre ci-dessous :</h3>
+							<textarea type="input" id="message"  name="message" cols="60" rows="15" ></textarea>
+							<br/>
+							<span class="validity"></span>
+							<br/>
+							<br/>
+							<button type="submit" >Envoyer</button>
+						</form> 
+					</td>
+					<td width="80%" align="center">
+						<img src="{{ url_for('static', path='/bonne_nuit_les_petits.gif') }}" /
+					</td>
+				</tr>
+			</table>
+		</div><!-- fin du contenu principal de la page -->
+		<div class="footer"><!-- début du bloc de pied de page-->
+			<p>Réalisé dans le cadre des cours Apprentissage artificiel et Interfaces Web du professeur Loïc Grobol - Alexandra, Aurélie & Caroline - promotion M2 TAL 2021-2022</p>
+		</div><!-- fin du bloc de pied de page-->
+	</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="fr">
+	<head>
+		<title>PROJET Loic</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="#">	
+		<link REL="stylesheet" href="idee.css">
+	</head>
+	<header><!-- en-tête = titre + sous-titre + menu -->
+		<hgroup><!-- titre + sous-titre -->
+			<h1>SentimenTAL</h1>
+			<h2>Quel livre allez-vous lire à votre enfant ce soir ?  &#128218; &#128564;</h2>
+		</hgroup><!-- fin de la partie titre + sous-titre -->
+		<div id="nav"><!-- menu de nagivation -->
+			<nav class="navmenu">
+				<ul class = "nav">
+					<li><a href="../" style="color:#FFFFFF"><span>Accueil</span></a></li>
+					<li><a href="description_projet.html" style="color:#FFFFFF"><span>Le projet</span></a></li>
+					<li><a href="description_nous.html" style="color:#FFFFFF"><span>L'équipe</span></a></li>
+				</ul>
+			</nav>
+		</div><!-- fin du menu de navigation -->
+	</header><!-- fin de l'en-tête-->
+	<body>
+		<div id="section"><!-- début du contenu principal de la page -->
+			<h3>Contexte</h3>
+			Ce projet a été réalisé pour l'évaluation des cours Apprentissage artificiel et Interfaces Web donnés par le professeur Loïc Grobol au premier semestre de M2 TAL 2021-2022 à l'université Paris Nanterre. 
+			<br/>
+			<br/>L'idée est d'élaborer une pipeline complète :
+			<br/>
+			<br/>- choisir une tâche de TAL 
+			<br/>- construire un jeu de données pertinent pour la tâche à mettre en oeuvre
+			<br/>- construire un modèle de Machine Learning qui apprend à partir de ce jeu de données à effectuer la tâche
+			<br/>- intégrer le modèle construit et entraîné dans une API pour en ouvrir l'accès aux utilisateurs (en local)
+			
+			<h3>Réalisation</h3>
+				<li>
+				<h4>Choix de la tâche</h4>
+				Nous avons choisi cette tâche de classification en sentiment car il nous paraissait pertinent d’avoir un outil capable de nous informer sur ce qu’un texte peut dégager. Nous avons exclusivement ciblé des textes destinés aux enfants dans le but de permettre aux parents de choisir leur lecture en fonction du sentiment dominant qui est présent. Le parent pourra, dans ce cas, orienter la lecture en fonction de qu’il souhaite transmettre et apprendre à son enfant.<br/><br/>De plus, étant donné que maintes de travaux de recherche s’effectuent sur la détection des émotions et des sentiments, nous avons décidé de relever le défi en allant plus loin que la polarité positive et négative en désignant un sentiment précis.
+				</li>
+				<li>
+					<h4>Construction du jeu de données</h4>
+						<li>Textes pour enfants que nous avons choisi d'annoter :</li>
+						<br/>
+						<br/>
+						<table border="0" align="center" style="max-width:1200px;width:100%; font-size: 16px">
+							<tr>
+								<th>Titre de l'ouvrage</th>
+      							<th>Auteur</th>
+      							<th>Texte brut</th>
+							</tr>
+							<tr>
+								<td>Chien Pourri à l'école</td>
+								<td width="50%" align="center">Enid Blyton</td>
+								<td width="50%" align="center"><a href="../data/chien_pourri_ecole.txt" style="color:#000000"><span_a>chien_pourri_ecole.txt</span_a></a></td>
+							</tr>
+							<tr>
+								<td width="50%" align="center">Chien Pourri à la ferme</td>
+								<td width="50%" align="center">Enid Blyton</td>
+								<td width="50%" align="center"><a href="../data/chien_pourri_ferme.txt" style="color:#000000"><span_a>chien_pourri_ferme.txt</span_a></a></td>
+							</tr>
+							<tr>
+								<td width="50%" align="center">Chien Pourri à la plage</td>
+								<td width="50%" align="center">Enid Blyton</td>
+								<td width="50%" align="center"><a href="../data/chien_pourri_plage.txt" style="color:#000000"><span_a>chien_pourri_plage.txt</span_a></a></td>
+							</tr>
+							<tr>
+								<td width="50%" align="center">Chien Pourri à Noël</td>
+								<td width="50%" align="center">Enid Blyton</td>
+								<td width="50%" align="center"><a href="../data/chien_pourri_noel.txt" style="color:#000000"><span_a>chien_pourri_noel.txt</span_a></a></td>
+							</tr>
+							<tr>
+								<td width="50%" align="center">Chien Pourri à Paris</td>
+								<td width="50%" align="center">Enid Blyton</td>
+								<td width="50%" align="center"><a href="../data/chien_pourri_paris.txt" style="color:#000000"><span_a>chien_pourri_paris.txt</span_a></a></td>
+							</tr>
+							<tr>
+								<td width="50%" align="center">Confinés à la maison</td>
+								<td width="50%" align="center">Shweta Ganesh Kumar</td>
+								<td width="50%" align="center"><a href="../data/confines_a_la_maison.txt" style="color:#000000"><span_a>confines_a_la_maison.txt</span_a></a></td>
+							</tr>
+							<tr>
+								<td width="50%" align="center">Le nouveau camarade de classe</td>
+								<td width="50%" align="center">Reshma Thapa Gurung</td>
+								<td width="50%" align="center"><a href="../data/le_nouveau_camarade_de_classe.txt" style="color:#000000"><span_a>le_nouveau_camarade_de_classe.txt</span_a></a></td>
+							</tr>
+							<tr>
+								<td width="50%" align="center">Oui-oui veut faire fortune</td>
+								<td width="50%" align="center">Enid Blyton</td>
+								<td width="50%" align="center"><a href="../data/oui_oui.txt" style="color:#000000"><span_a>oui_oui.txt</span_a></a></td>
+							</tr>
+							<tr>
+								<td width="50%" align="center">Pschitt, chien errant</td>
+								<td width="50%" align="center">Kavitha Punniyamurthi</td>
+								<td width="50%" align="center"><a href="../data/chien_errant.txt" style="color:#000000"><span_a>chien_errant.txt</span_a></a></td>
+							</tr>
+						</table>
+					<br/>
+					<br/>
+					<li><a href="../texte_brut.txt" style="color:#000000"><span_a>Corpus annoté au format BILOU</span_a></a></td></li>
+					<br/>
+					<br/>
+					Pour annoter notre corpus nous avons opté pour l’annotation en BILOU. Cette méthode nous permet d’utiliser un modèle SpaCy et de le réentraîner avec nos propres étiquettes. En outre, dans un texte les sentiments ne sont pas tous formés d’une seule unité. Les étiquettes BILOU nous permettent de faire ressortir les unités de début, de milieu et de fin du syntagme représentant le sentiment.
+					<br/>
+					<br/>
+					Ce procédé consiste à annoter chaque mot faisant partie du segment qui nous intéresse. Chaque lettre correspond à une position dans le segment annoté tel que :
+					<br/>
+					- B = Beginning, correspond à la première unité du groupe de mots correspondant à un sentiment<br/>
+					- I = Inside, correspond à la deuxième unité d’un groupe de mots lorsqu’il y en a au moins trois<br/>
+					- L = Last, correspond à la dernière unité d’un groupe de mots formé d’au moins deux unités<br/>
+					- O = Outside, permet d’annoter tout ce qui ne correspond pas à un sentiment<br/>
+					- U = Unit, permet d’annoter une unité lorsqu’elle est seule
+					<br/>
+					<br/>
+					Prenons deux exemples pour illustrer ce système d'annotation :
+					<br/>
+					<br/>
+					Pour la phrase "Laura est heureuse aujourd'hui.", nous aurons l'annotation en BILOU suivante :<br/>
+					Laura O<br/>
+					est O<br/>
+					heureuse U<br/>
+					aujourd'hui O<br/>
+					<br/>
+					Pour la phrase "Laura est très très triste." :<br/>
+					Laura O<br/>
+					est O<br/>
+					très B<br/>
+					très I<br/>
+					triste L<br/>
+					<br/>
+					Nous avons choisi des sentiments assez simples afin d'éviter au maximum les ambiguïtés d'annotation, sachant qu'elle était réalisée par trois personnes différentes. De plus, dans les textes pour enfants, les sentiments sont souvent décrits de manière assez simple pour être facilement expliqués aux enfants. Nous avons donc réduit le jeu d'étiquettes à sept sentiments principaux, tel que :
+					<br/>
+					- colère
+					<br/>
+					- dégoût
+					<br/>
+					- joie
+					<br/>
+					- moquerie
+					<br/>
+					- peur
+					<br/>
+					- surprise
+					<br/>
+					- tristesse
+					<br/>
+					<br/>
+					Dans l'interface utilisateur, on a restitué le jeu d'étiquettes à travers une légende qui donne un aspect plus ludique aux résultats en sortie. En effet, pour les éléments de cette légende et les entités nommées reconnues dans le texte comme des sentiments, on a créé dans la feuille css des balises spécifiques de type {type_NER}_label>avec tous les paramètres polices
+					
+				</li>
+				<li>
+					<h4>Construction du modèle</h4>
+					Nous avons construit un modèle de langue Spacy adapté à l'annotation en sentiments sur du texte français.
+				</li>
+				<li>
+					<h4>Intégration du modèle dans une API</h4>
+					Nous avons choisi d'utiliser le framework FastAPI qui permet de développer une API avec du code Python. Nous avons regroupé toutes les fonctions qui concernent notre modèle, de son entraînement à son utilisation sur des données, dans un module. Ensuite, nous avons créé le script principal de l'API, qui permet de la faire tourner sur un serveur et de lui envoyer des requêtes. La première requête permet à l'utilisateur d'arriver directement sur la page d'accueil. La deuxième requête récupère le texte saisi et envoyé par l'utilisateur, la donne en entrée au modèle et renvoie à l'utilisateur la sortie du modèle, c'est-à-dire son texte annoté en sentiments. Pour gérer les pages HTML qui forment l'architecture de notre interface web, nous avons utilisé le moteur de templates pour Python nommé Jinja2. C'est grâce à ce module, directement intégré dans la bibliothèque FastAPI que nous avons pu transmettre des résultats à l'utilisateur à l'intérieur d'une page écrite en langage HTML. Enfin, pour rendre l'expérience utilisateur plus agréable, nous avons associés un feuille de style écrite en CSS à l'ensemble de notre interface web. C'est elle qui nous a permis de lui donner un peu de vie... et on espère vraiment qu'elle vous plaît !! &#128526;
+				</li>
+				<li>
+					<h4>Les problèmes rencontrés</h4>
+					Le premier problème que nous avons rencontré a été durant la phase d’annotation. Nous nous sommes rendu compte qu’il fallait que le texte en BILOU corresponde exactement au texte brut lorsque l’on souhaite lancer le modèle. En effet, sans savoir pourquoi une fois notre texte annoté en BILOU, le nombre de caractères ne correspondait plus au texte sans annotation. Pour pallier le problème nous avons dû reprendre nos annotations.
+					<br/>
+					<br/>
+					Le deuxième problème fut au moment de création de notre API, nous n’arrivions pas à récupérer le texte entré dans la fenêtre destinée au message à analyser. Il s’est avéré que le problème venait de la balise que nous avions utilisée. Pour avoir la forme de fenêtre que nous voulions utiliser la balise &lt;input type=textarea&gt; mais la balise &lt;input&gt; ne fonctionnait pas de n’importe quelle manière avec notre première balise. Nous avons compris par la suite qu’il suffisait de spécifier le type de la balise &lt;textarea type=input&gt;.
+					<br/>
+					<br/>
+					Un troisième problème est survenu lors de l’intégration du modèle dans l’API (?)
+					<br/>
+					<br/>
+					Nous avons pu déceler un autre problème en faisant des tests. En effet, nous nous sommes rendu compte que le modèle ne prenait en compte que le dernier segment faisant référence à un sentiment. Il s’agissait seulement d’un problème de variable et de la fonction reversed.
+					
+				</li>	
+			<h3>Langages de programmation</h3>
+			<table border="0" align="center" style="max-width:1200px;width:80%; font-size: 16px">
+				<tr>
+					<td width="50%" align="center"><img alt="logo Python" style="max-width:225px;width:60%" src="./Python_logo.png"/></td>
+					<td width="30%" align="center"></td>
+					<td width="50%" align="center"><img alt="logo HTML5" style="max-width:225px;width:40%" src="./HTML5_logo.png"/></td>
+					<td width="30%" align="center"></td>
+					<td width="50%" align="center"><img alt="photo Caroline" style="max-width:225px;width:30%" src="./CSS3_logo.png"/></td>
+				</tr>
+			</table>
+			<h3>Méthodologie de travail</h3>
+			
+			Les étapes que nous avons suivies pour réaliser ce projet suivent l'ordre que vous pouvez observer ci-dessus dans la section <strong>Réalisation</strong>. Dans cette section, nous allons aborder la répartition de ces différentes tâches entre les membres de l'équipe projet.
+			<br/>
+			<br/>
+			Pour l’annotation, nous avons également répartis le travail, en choisissant chacune trois textes à annoter.
+			<br/>
+			<br/>
+			Pour les phases de résolution de problème, de mise en place du modèle et d’intégration de ce modèle dans l’API nous avons travaillé ensemble dans un souci pratique.
+			<br/>
+			<br/>
+			En ce qui concerne la réalisation du site, Caroline a commencé les recherches pour nous trouver une template idéale. Nous avons ensuite construit l’API ensemble ainsi que l’intégration du modèle dans notre API.
+			
+			Alexandra s’est ensuite occupée de remplir le site pour qu’il vous soit le plus agréable possible. Caroline et Aurélie se sont quant à elles occupées de la rédaction.
+		</div><!-- fin du contenu principal de la page -->
+		<div class="footer"><!-- début du bloc de pied de page-->
+			Réalisé dans le cadre des cours Apprentissage artificiel et Interfaces Web du professeur Loïc Grobol - Alexandra, Aurélie & Caroline - promotion M2 TAL 2021-2022
+		</div><!-- fin du bloc de pied de page-->
+	</body>
+</html>
