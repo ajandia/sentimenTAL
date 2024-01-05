@@ -2,7 +2,7 @@
 
 ## Description
 
-Projet TAL (Traitement Automatique des Langues) dont le but était de créer un modèle de machine learning capable d'identifier les sentiments principaux présents dans des livres. Le modèle a été entraîné sur des textes issus de livres pour enfants.
+Projet en Python dont le but était de créer un modèle de machine learning capable d'identifier les sentiments principaux présents dans des livres. Le modèle a été entraîné sur des textes issus de livres pour enfants.
 
 ## Lancer le projet
 
